@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amalia Corner</title>
+</head>
 
+<body>
+
+    <!-- NAMA TOKO -->
+    <table width="100%" bgcolor="pink">
+        <tr>
+            <td align="center">
+                <h1>AMALIA CORNER</h1>
+                <p>Jus | Capung | Latte</p>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- MENU -->
+    <table width="100%" border="1">
+        <tr>
+            <td align="center">
+                <a href="#produk">Produk</a>
+            </td>
+
+            <td align="center">
+                <a href="#keranjang">Keranjang</a>
+            </td>
+
+            <td align="center">
+                <a href="#kontak">Kontak</a>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- SELAMAT DATANG -->
+    <h2 align="center">
+        Selamat Datang di Amalia Corner!
+    </h2>
+
+    <p align="center">
+        Temukan pilihan produk yang tersedia di Amalia Corner.
+    </p>
+
+    <br>
+
+    <!-- DAFTAR PRODUK -->
+    <table width="100%" border="1" id="produk">
+
+        <tr bgcolor="lightblue">
+            <td colspan="3" align="center">
+                <h2>DAFTAR PRODUK</h2>
+            </td>
+        </tr>
+
+        <tr>
+
+            <!-- JUS -->
+            <td align="center">
+
+                <img src="JusAlpukat.jpg" width="200">
+
+                <h3>Jus Alpukat</h3>
+
+                <p>
+                    Jus alpukat segar dan nikmat.
+                </p>
+
+                <h3>
+                    Rp12.000
+                </h3>
+
+                <button onclick="tambahKeranjang('Jus Alpukat', 12000)">
+                    Tambah ke Keranjang
+                </button>
+
+            </td>
+
+
+            <!-- CAPUNG -->
+            <td align="center">
+
+                <img src="CapungJingga.jpg" width="200">
+
+                <h3>Capung Jingga</h3>
+
+                <p>
+                    Capung dengan warna jingga.
+                </p>
+
+                <h3>
+                    Rp35.000
+                </h3>
+
+                <button onclick="tambahKeranjang('Capung Jingga', 35000)">
+                    Tambah ke Keranjang
+                </button>
+
+            </td>
+
+
+            <!-- LATTE -->
+            <td align="center">
+
+                <img src="ChocolateLatte.jpg" width="200">
+
+                <h3>Chocolate Latte</h3>
+
+                <p>
+                    Latte dengan rasa cokelat.
+                </p>
+
+                <h3>
+                    Rp20.000
+                </h3>
+
+                <button onclick="tambahKeranjang('Chocolate Latte', 20000)">
+                    Tambah ke Keranjang
+                </button>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br><br>
+
+
+    <!-- KERANJANG -->
+    <table width="100%" border="1" id="keranjang">
+
+        <tr bgcolor="lightyellow">
+            <td align="center">
+
+                <h2>🛒 KERANJANG BELANJA</h2>
+
+                <div id="isiKeranjang">
+
+                    <p>
+                        Keranjang masih kosong.
+                    </p>
+
+                </div>
+
+                <h3>
+                    Total:
+                    <span id="total">Rp0</span>
+                </h3>
+
+                <button onclick="kurangiSemua()">
+                    Kosongkan Keranjang
+                </button>
+
+                <br><br>
+
+                <button onclick="pesanSekarang()">
+                    Pesan Sekarang
+                </button>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <br><br>
+
+
+    <!-- KONTAK -->
+    <table width="100%" border="1" id="kontak">
+
+        <tr bgcolor="lightpink">
+
+            <td align="center">
+
+                <h2>INFORMASI PEMILIK</h2>
+
+                <p>
+                    <b>Nama:</b>
+                    Amalia Nur Azizah
+                </p>
+
+                <p>
+                    <b>No. Telepon:</b>
+                    +62 857 3303 7573
+                </p>
+
+                <br>
+
+                <button onclick="hubungiPenjual()">
+                    Hubungi Penjual
+                </button>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <p align="center">
+        © 2026 Amalia Corner
+    </p>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        let keranjang = [];
+
+
+        // MENAMBAHKAN PRODUK
+        function tambahKeranjang(nama, harga) {
+
+            let produk = keranjang.find(
+                item => item.nama === nama
+            );
+
+            if (produk) {
+
+                produk.jumlah++;
+
+            } else {
+
+                keranjang.push({
+
+                    nama: nama,
+
+                    harga: harga,
+
+                    jumlah: 1
+
+                });
+
+            }
+
+            tampilkanKeranjang();
+        }
+
+
+        // MENAMPILKAN KERANJANG
+        function tampilkanKeranjang() {
+
+            let isi = "";
+
+            let totalHarga = 0;
+
+
+            if (keranjang.length === 0) {
+
+                isi =
+                    "<p>Keranjang masih kosong.</p>";
+
+            } else {
+
+                for (
+                    let i = 0;
+                    i < keranjang.length;
+                    i++
+                ) {
+
+                    let produk = keranjang[i];
+
+                    let subtotal =
+                        produk.harga *
+                        produk.jumlah;
+
+                    totalHarga += subtotal;
+
+
+                    isi +=
+
+                        "<p>" +
+
+                        "<b>" +
+                        produk.nama +
+                        "</b>" +
+
+                        " × " +
+
+                        produk.jumlah +
+
+                        " = Rp" +
+
+                        subtotal.toLocaleString("id-ID") +
+
+                        "</p>";
+
+                }
+
+            }
+
+
+            document.getElementById(
+                "isiKeranjang"
+            ).innerHTML = isi;
+
+
+            document.getElementById(
+                "total"
+            ).innerHTML =
+                "Rp" +
+                totalHarga.toLocaleString("id-ID");
+
+        }
+
+
+        // MENGOSONGKAN KERANJANG
+        function kurangiSemua() {
+
+            keranjang = [];
+
+            tampilkanKeranjang();
+
+        }
+
+
+        // PESAN MELALUI WHATSAPP
+        function pesanSekarang() {
+
+            if (keranjang.length === 0) {
+
+                alert(
+                    "Keranjang masih kosong!"
+                );
+
+                return;
+
+            }
+
+
+            let pesan =
+                "Halo Amalia Corner,%0A" +
+                "Saya ingin memesan:%0A%0A";
+
+
+            let totalHarga = 0;
+
+
+            for (
+                let i = 0;
+                i < keranjang.length;
+                i++
+            ) {
+
+                let produk =
+                    keranjang[i];
+
+
+                let subtotal =
+                    produk.harga *
+                    produk.jumlah;
+
+
+                totalHarga += subtotal;
+
+
+                pesan +=
+
+                    produk.nama +
+
+                    " x " +
+
+                    produk.jumlah +
+
+                    " = Rp" +
+
+                    subtotal.toLocaleString(
+                        "id-ID"
+                    ) +
+
+                    "%0A";
+
+            }
+
+
+            pesan +=
+
+                "%0ATotal: Rp" +
+
+                totalHarga.toLocaleString(
+                    "id-ID"
+                );
+
+
+            window.open(
+
+                "https://wa.me/6285733037573?text=" +
+                pesan,
+
+                "_blank"
+
+            );
+
+        }
+
+
+        // HUBUNGI PENJUAL
+        function hubungiPenjual() {
+
+            window.open(
+                "https://wa.me/6285733037573",
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+</body>
+  </html>
