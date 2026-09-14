@@ -2,219 +2,532 @@
 <html>
 <head>
     <title>Amalia Corner</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffaf7;
+            color: #4d4145;
+        }
+
+        header {
+            background-color: #fff1f5;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+            color: #9b6077;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5b4c51;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #d8789d;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background-color: #fff1f5;
+        }
+
+        .hero p:first-child {
+            color: #d07898;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin: 15px 0;
+            color: #765565;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .tombol {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background-color: #d889a7;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .section {
+            padding: 70px 8%;
+        }
+
+        .judul-kecil {
+            color: #d07898;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .section h2 {
+            font-size: 35px;
+            color: #765565;
+        }
+
+        .produk {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 30%;
+            min-width: 250px;
+            padding-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #eadfe2;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #765565;
+            font-size: 22px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .harga {
+            color: #d07898;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .tambah {
+            border: none;
+            background-color: #f3c5d5;
+            color: #674653;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tambah:hover {
+            background-color: #e9abc2;
+        }
+
+        .about {
+            background-color: #f9e9ee;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .fitur {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .fitur div {
+            font-size: 15px;
+        }
+
+        .keranjang {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 700px;
+            margin: 40px auto 0;
+            box-shadow: 0 5px 20px #eadfe2;
+        }
+
+        .keranjang h3 {
+            color: #765565;
+        }
+
+        .item {
+            background-color: #fff4f7;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 10px;
+        }
+
+        .jumlah button {
+            border: none;
+            background-color: #f3c5d5;
+            border-radius: 15px;
+            padding: 5px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d07898;
+            margin-top: 20px;
+        }
+
+        .pesan {
+            display: block;
+            margin: 20px auto 0;
+            border: none;
+            background-color: #91c7a6;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .kontak {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        footer {
+            background-color: #765565;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                display: block;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <!-- NAMA TOKO -->
-    <table width="100%" bgcolor="pink">
-        <tr>
-            <td align="center">
-                <h1>AMALIA CORNER</h1>
-                <p>Jus | Capung | Latte</p>
-            </td>
-        </tr>
-    </table>
 
-    <br>
+    <!-- HEADER -->
 
-    <!-- MENU -->
-    <table width="100%" border="1">
-        <tr>
-            <td align="center">
-                <a href="#produk">Produk</a>
-            </td>
+    <header>
 
-            <td align="center">
-                <a href="#keranjang">Keranjang</a>
-            </td>
+        <h2>Amalia Corner</h2>
 
-            <td align="center">
-                <a href="#kontak">Kontak</a>
-            </td>
-        </tr>
-    </table>
+        <nav>
 
-    <br>
+            <a href="#home">Home</a>
 
-    <!-- SELAMAT DATANG -->
-    <h2 align="center">
-        Selamat Datang di Amalia Corner!
-    </h2>
+            <a href="#shop">Shop</a>
 
-    <p align="center">
-        Temukan pilihan produk yang tersedia di Amalia Corner.
-    </p>
+            <a href="#about">About</a>
 
-    <br>
+            <a href="#keranjang">Cart 🛒</a>
 
-    <!-- DAFTAR PRODUK -->
-    <table width="100%" border="1" id="produk">
+        </nav>
 
-        <tr bgcolor="lightblue">
-            <td colspan="3" align="center">
-                <h2>DAFTAR PRODUK</h2>
-            </td>
-        </tr>
+    </header>
 
-        <tr>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <p>AMALIA CORNER</p>
+
+        <h1>Temukan favoritmu.</h1>
+
+        <p>
+            Selamat datang di Amalia Corner.
+            Temukan pilihan Jus, Capung, dan Latte
+            yang tersedia untukmu.
+        </p>
+
+        <a href="#shop" class="tombol">
+            Lihat Produk →
+        </a>
+
+    </section>
+
+
+    <!-- PRODUK -->
+
+    <section class="section" id="shop">
+
+        <p class="judul-kecil">
+            OUR PRODUCTS
+        </p>
+
+        <h2>Pilihan untukmu.</h2>
+
+
+        <div class="produk">
+
 
             <!-- JUS -->
-            <td align="center">
 
-                <img src="JusAlpukat.jpg" width="200">
+            <div class="card">
 
-                <h3>Jus Alpukat</h3>
+                <img src="JusAlpukat.jpg">
 
-                <p>
-                    Jus alpukat segar dan nikmat.
-                </p>
+                <div class="card-content">
 
-                <h3>
-                    Rp12.000
-                </h3>
-
-                <button onclick="tambahKeranjang('Jus Alpukat', 12000)">
-                    Tambah ke Keranjang
-                </button>
-
-            </td>
-
-
-            <!-- CAPUNG -->
-            <td align="center">
-
-                <img src="CapungJingga.jpg" width="200">
-
-                <h3>Capung Jingga</h3>
-
-                <p>
-                    Capung dengan warna jingga.
-                </p>
-
-                <h3>
-                    Rp35.000
-                </h3>
-
-                <button onclick="tambahKeranjang('Capung Jingga', 35000)">
-                    Tambah ke Keranjang
-                </button>
-
-            </td>
-
-
-            <!-- LATTE -->
-            <td align="center">
-
-                <img src="ChocolateLatte.jpg" width="200">
-
-                <h3>Chocolate Latte</h3>
-
-                <p>
-                    Latte dengan rasa cokelat.
-                </p>
-
-                <h3>
-                    Rp20.000
-                </h3>
-
-                <button onclick="tambahKeranjang('Chocolate Latte', 20000)">
-                    Tambah ke Keranjang
-                </button>
-
-            </td>
-
-        </tr>
-
-    </table>
-
-    <br><br>
-
-
-    <!-- KERANJANG -->
-    <table width="100%" border="1" id="keranjang">
-
-        <tr bgcolor="lightyellow">
-            <td align="center">
-
-                <h2>🛒 KERANJANG BELANJA</h2>
-
-                <div id="isiKeranjang">
+                    <h3>Jus Alpukat</h3>
 
                     <p>
-                        Keranjang masih kosong.
+                        Jus alpukat segar dengan rasa
+                        yang lembut dan nikmat.
                     </p>
+
+                    <div class="harga">
+                        Rp12.000
+                    </div>
+
+                    <button
+                        class="tambah"
+                        onclick="tambahKeranjang('Jus Alpukat', 12000)">
+                        + Tambah
+                    </button>
 
                 </div>
 
-                <h3>
-                    Total:
-                    <span id="total">Rp0</span>
-                </h3>
+            </div>
 
-                <button onclick="kurangiSemua()">
-                    Kosongkan Keranjang
-                </button>
 
-                <br><br>
+            <!-- CAPUNG -->
 
-                <button onclick="pesanSekarang()">
-                    Pesan Sekarang
-                </button>
+            <div class="card">
 
-            </td>
-        </tr>
+                <img src="CapungJingga.jpg">
 
-    </table>
+                <div class="card-content">
 
-    <br><br>
+                    <h3>Capung Jingga</h3>
+
+                    <p>
+                        Koleksi capung dengan warna
+                        jingga yang menarik.
+                    </p>
+
+                    <div class="harga">
+                        Rp35.000
+                    </div>
+
+                    <button
+                        class="tambah"
+                        onclick="tambahKeranjang('Capung Jingga', 35000)">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LATTE -->
+
+            <div class="card">
+
+                <img src="ChocolateLatte.jpg">
+
+                <div class="card-content">
+
+                    <h3>Chocolate Latte</h3>
+
+                    <p>
+                        Latte lembut dengan perpaduan
+                        rasa cokelat yang nikmat.
+                    </p>
+
+                    <div class="harga">
+                        Rp20.000
+                    </div>
+
+                    <button
+                        class="tambah"
+                        onclick="tambahKeranjang('Chocolate Latte', 20000)">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- KERANJANG -->
+
+        <div class="keranjang" id="keranjang">
+
+            <h3>🛒 Keranjang Belanja</h3>
+
+            <div id="isiKeranjang">
+
+                <p>
+                    Keranjang masih kosong.
+                </p>
+
+            </div>
+
+            <div class="total">
+
+                Total:
+                <span id="total">Rp0</span>
+
+            </div>
+
+            <button
+                onclick="kosongkanKeranjang()">
+
+                Kosongkan Keranjang
+
+            </button>
+
+            <button
+                class="pesan"
+                onclick="pesanSekarang()">
+
+                💬 Pesan via WhatsApp
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section about" id="about">
+
+        <p class="judul-kecil">
+            ABOUT AMALIA CORNER
+        </p>
+
+        <h2>Dibuat dengan penuh perhatian ♡</h2>
+
+        <p>
+            Amalia Corner adalah toko sederhana
+            yang menyediakan berbagai pilihan
+            untuk menemani hari-harimu.
+            Pilih produk yang kamu suka,
+            masukkan ke keranjang,
+            lalu lakukan pemesanan dengan mudah.
+        </p>
+
+
+        <div class="fitur">
+
+            <div>🧃 Pilihan Jus</div>
+
+            <div>🪷 Koleksi Capung</div>
+
+            <div>☕ Pilihan Latte</div>
+
+            <div>💬 Pesan via WhatsApp</div>
+
+        </div>
+
+    </section>
 
 
     <!-- KONTAK -->
-    <table width="100%" border="1" id="kontak">
 
-        <tr bgcolor="lightpink">
+    <section class="kontak">
 
-            <td align="center">
+        <p class="judul-kecil">
+            CONTACT
+        </p>
 
-                <h2>INFORMASI PEMILIK</h2>
+        <h2>Amalia Nur Azizah</h2>
 
-                <p>
-                    <b>Nama:</b>
-                    Amalia Nur Azizah
-                </p>
+        <p>
+            📞 +62 857 3303 7573
+        </p>
 
-                <p>
-                    <b>No. Telepon:</b>
-                    +62 857 3303 7573
-                </p>
+        <a
+            class="tombol"
+            href="https://wa.me/6285733037573">
 
-                <br>
+            Chat via WhatsApp →
 
-                <button onclick="hubungiPenjual()">
-                    Hubungi Penjual
-                </button>
+        </a>
 
-            </td>
+    </section>
 
-        </tr>
 
-    </table>
+    <!-- FOOTER -->
 
-    <br>
+    <footer>
 
-    <p align="center">
         © 2026 Amalia Corner
-    </p>
+
+    </footer>
+
 
 
     <!-- JAVASCRIPT -->
+
     <script>
 
         let keranjang = [];
 
 
-        // MENAMBAHKAN PRODUK
         function tambahKeranjang(nama, harga) {
 
             let produk = keranjang.find(
@@ -240,10 +553,34 @@
             }
 
             tampilkanKeranjang();
+
         }
 
 
-        // MENAMPILKAN KERANJANG
+        function tambahProduk(index) {
+
+            keranjang[index].jumlah++;
+
+            tampilkanKeranjang();
+
+        }
+
+
+        function kurangiProduk(index) {
+
+            keranjang[index].jumlah--;
+
+            if (keranjang[index].jumlah <= 0) {
+
+                keranjang.splice(index, 1);
+
+            }
+
+            tampilkanKeranjang();
+
+        }
+
+
         function tampilkanKeranjang() {
 
             let isi = "";
@@ -275,21 +612,38 @@
 
                     isi +=
 
-                        "<p>" +
+                        "<div class='item'>" +
 
                         "<b>" +
                         produk.nama +
-                        "</b>" +
+                        "</b><br>" +
+
+                        "Rp" +
+                        produk.harga.toLocaleString("id-ID") +
 
                         " × " +
-
                         produk.jumlah +
 
                         " = Rp" +
-
                         subtotal.toLocaleString("id-ID") +
 
-                        "</p>";
+                        "<br>" +
+
+                        "<div class='jumlah'>" +
+
+                        "<button onclick='kurangiProduk(" +
+                        i +
+                        ")'>−</button>" +
+
+                        produk.jumlah +
+
+                        "<button onclick='tambahProduk(" +
+                        i +
+                        ")'>+</button>" +
+
+                        "</div>" +
+
+                        "</div>";
 
                 }
 
@@ -310,8 +664,7 @@
         }
 
 
-        // MENGOSONGKAN KERANJANG
-        function kurangiSemua() {
+        function kosongkanKeranjang() {
 
             keranjang = [];
 
@@ -320,13 +673,12 @@
         }
 
 
-        // PESAN MELALUI WHATSAPP
         function pesanSekarang() {
 
             if (keranjang.length === 0) {
 
                 alert(
-                    "Keranjang masih kosong!"
+                    "Keranjang masih kosong."
                 );
 
                 return;
@@ -335,8 +687,8 @@
 
 
             let pesan =
-                "Halo Amalia Corner,%0A" +
-                "Saya ingin memesan:%0A%0A";
+                "Halo Amalia Corner!%0A%0A" +
+                "Saya ingin memesan:%0A";
 
 
             let totalHarga = 0;
@@ -348,14 +700,11 @@
                 i++
             ) {
 
-                let produk =
-                    keranjang[i];
-
+                let produk = keranjang[i];
 
                 let subtotal =
                     produk.harga *
                     produk.jumlah;
-
 
                 totalHarga += subtotal;
 
@@ -370,9 +719,7 @@
 
                     " = Rp" +
 
-                    subtotal.toLocaleString(
-                        "id-ID"
-                    ) +
+                    subtotal.toLocaleString("id-ID") +
 
                     "%0A";
 
@@ -383,9 +730,7 @@
 
                 "%0ATotal: Rp" +
 
-                totalHarga.toLocaleString(
-                    "id-ID"
-                );
+                totalHarga.toLocaleString("id-ID");
 
 
             window.open(
@@ -399,18 +744,7 @@
 
         }
 
-
-        // HUBUNGI PENJUAL
-        function hubungiPenjual() {
-
-            window.open(
-                "https://wa.me/6285733037573",
-                "_blank"
-            );
-
-        }
-
     </script>
 
 </body>
-  </html>
+</html>
